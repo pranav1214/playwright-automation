@@ -5,11 +5,11 @@ import { encryptEnvFile, decryptEnvFile } from "../utils/EncryptEnvFile";
 
 test("test", async ({ page }) => {
 
-    encryptEnvFile();
+    // encryptEnvFile();
     const loginPage = new LoginPage(page);
     await loginPage.navigateToLoginPage();
     await loginPage.fillUsername(decrypt(process.env.userid!));
-    await loginPage.fillPassword(process.env.password!);
+    await loginPage.fillPassword(decrypt(process.env.password!));
     const homePage = await loginPage.clickLoginButton();
     await homePage.expectServiceTitleToBeVisible();
 });

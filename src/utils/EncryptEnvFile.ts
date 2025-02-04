@@ -43,7 +43,7 @@ export function encryptEnvFile() {
   console.log("Encryption complete. Updated .env file.");
 }
 export function decryptEnvFile() {
-  const SALT = process.env.SALT || "defaultSALT";
+  const SALT = process.env.SALT || "pranav";
   // Read the .env file
   const envFileContent = fs.readFileSync(envFilePath, "utf8");
   const envLines = envFileContent.split("\n");
